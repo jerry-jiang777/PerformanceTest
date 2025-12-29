@@ -1,0 +1,1639 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: advanced-chat
+  name: 性能测试自动化压测工具251111
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/volcengine_maas:0.0.30@0e6b13a721cc8fb7b928787f86ffc57655ace2cbc938c4738c209d70b18a85f8
+kind: app
+version: 0.2.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: http-request
+      id: 1760409854786-source-1760418968306-target
+      selected: false
+      source: '1760409854786'
+      sourceHandle: source
+      target: '1760418968306'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: http-request
+      id: 1760422564037-true-1760422465839-target
+      selected: false
+      source: '1760422564037'
+      sourceHandle: 'true'
+      target: '1760422465839'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: http-request
+        targetType: loop
+      id: 1760422465839-source-1760422750826-target
+      selected: false
+      source: '1760422465839'
+      sourceHandle: source
+      target: '1760422750826'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1760422750826'
+        sourceType: loop-start
+        targetType: http-request
+      id: 1760422750826start-source-1760451454426-target
+      selected: false
+      source: 1760422750826start
+      sourceHandle: source
+      target: '1760451454426'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1760422750826'
+        sourceType: template-transform
+        targetType: assigner
+      id: 1760452434284-source-1760452250922-target
+      selected: false
+      source: '1760452434284'
+      sourceHandle: source
+      target: '1760452250922'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: loop
+      id: 1760422564037-false-1760422750826-target
+      source: '1760422564037'
+      sourceHandle: 'false'
+      target: '1760422750826'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: answer
+        targetType: if-else
+      id: 1760511026083-source-1760422564037-target
+      source: '1760511026083'
+      sourceHandle: source
+      target: '1760422564037'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1760422750826'
+        sourceType: llm
+        targetType: answer
+      id: 1760423322379-source-1760511078673-target
+      source: '1760423322379'
+      sourceHandle: source
+      target: '1760511078673'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1760422750826'
+        sourceType: answer
+        targetType: parameter-extractor
+      id: 1760511078673-source-1760453972705-target
+      source: '1760511078673'
+      sourceHandle: source
+      target: '1760453972705'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1760422750826'
+        sourceType: assigner
+        targetType: answer
+      id: 1760452250922-source-1760536320713-target
+      source: '1760452250922'
+      sourceHandle: source
+      target: '1760536320713'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1760422750826'
+        sourceType: answer
+        targetType: llm
+      id: 1760536320713-source-1760423322379-target
+      source: '1760536320713'
+      sourceHandle: source
+      target: '1760423322379'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1760422750826'
+        sourceType: answer
+        targetType: template-transform
+      id: 1761543029721-source-1760452434284-target
+      source: '1761543029721'
+      sourceHandle: source
+      target: '1760452434284'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1760422750826'
+        sourceType: parameter-extractor
+        targetType: assigner
+      id: 1760453972705-source-1760453837068-target
+      source: '1760453972705'
+      sourceHandle: source
+      target: '1760453837068'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: loop
+        targetType: answer
+      id: 1760422750826-source-1761629166816-target
+      source: '1760422750826'
+      sourceHandle: source
+      target: '1761629166816'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: answer
+        targetType: http-request
+      id: 1761629166816-source-1760505607256-target
+      source: '1761629166816'
+      sourceHandle: source
+      target: '1760505607256'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: answer
+        targetType: parameter-extractor
+      id: 1761646882329-source-1761628358063-target
+      source: '1761646882329'
+      sourceHandle: source
+      target: '1761628358063'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: parameter-extractor
+        targetType: answer
+      id: 1761628358063-source-1761646958020-target
+      source: '1761628358063'
+      sourceHandle: source
+      target: '1761646958020'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: answer
+        targetType: answer
+      id: 1761646958020-source-answer-target
+      source: '1761646958020'
+      sourceHandle: source
+      target: answer
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: http-request
+        targetType: code
+      id: 1760418968306-source-1761704390283-target
+      source: '1760418968306'
+      sourceHandle: source
+      target: '1761704390283'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: answer
+      id: 1761704390283-source-1761704576343-target
+      source: '1761704390283'
+      sourceHandle: source
+      target: '1761704576343'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: answer
+        targetType: answer
+      id: 1761704576343-source-1760511026083-target
+      source: '1761704576343'
+      sourceHandle: source
+      target: '1760511026083'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1760422750826'
+        sourceType: http-request
+        targetType: code
+      id: 1760451454426-source-1761706424582-target
+      source: '1760451454426'
+      sourceHandle: source
+      target: '1761706424582'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1760422750826'
+        sourceType: code
+        targetType: answer
+      id: 1761706424582-source-1761706521320-target
+      source: '1761706424582'
+      sourceHandle: source
+      target: '1761706521320'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1760422750826'
+        sourceType: answer
+        targetType: answer
+      id: 1761706521320-source-1761543029721-target
+      source: '1761706521320'
+      sourceHandle: source
+      target: '1761543029721'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: http-request
+        targetType: code
+      id: 1760505607256-source-1761706638033-target
+      source: '1760505607256'
+      sourceHandle: source
+      target: '1761706638033'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: answer
+      id: 1761706638033-source-1761706646438-target
+      source: '1761706638033'
+      sourceHandle: source
+      target: '1761706646438'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: answer
+        targetType: answer
+      id: 1761706646438-source-1761646882329-target
+      source: '1761706646438'
+      sourceHandle: source
+      target: '1761646882329'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: answer
+        targetType: http-request
+      id: answer-source-1761788862013-target
+      source: answer
+      sourceHandle: source
+      target: '1761788862013'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: http-request
+        targetType: answer
+      id: 1761788862013-source-1761789013367-target
+      source: '1761788862013'
+      sourceHandle: source
+      target: '1761789013367'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables:
+        - allowed_file_extensions:
+          - .jmx
+          allowed_file_types:
+          - custom
+          allowed_file_upload_methods:
+          - local_file
+          label: Jmeter脚本文件
+          max_length: 10
+          options: []
+          required: true
+          type: file
+          variable: jmx
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          label: 参数化文件
+          max_length: 10
+          options: []
+          required: false
+          type: file-list
+          variable: param_file
+        - label: Jmeter压力机IP
+          max_length: 48
+          options: []
+          required: true
+          type: text-input
+          variable: ip
+        - label: 压测模式
+          max_length: 48
+          options:
+          - single
+          - distributed
+          required: true
+          type: select
+          variable: mode
+        - label: 起始并发数
+          max_length: 48
+          options: []
+          required: true
+          type: text-input
+          variable: threads
+        - label: 单轮压测持续时间
+          max_length: 48
+          options: []
+          required: true
+          type: text-input
+          variable: during_time
+      height: 218
+      id: '1760409854786'
+      position:
+        x: -4550.97109829148
+        y: 646.7161910806022
+      positionAbsolute:
+        x: -4550.97109829148
+        y: 646.7161910806022
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        answer: '生成测试报告,报告链接:：
+
+          http://{{#1760409854786.ip#}}:3900{{#1761628358063.report_url#}}
+
+
+
+          -------------------------------------------'
+        desc: ''
+        selected: false
+        title: 直接回复
+        type: answer
+        variables: []
+      height: 154
+      id: answer
+      position:
+        x: 2965.130972967859
+        y: 1321.6892734082842
+      positionAbsolute:
+        x: 2965.130972967859
+        y: 1321.6892734082842
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - file:
+            - '1760409854786'
+            - jmx
+            id: key-value-70
+            key: files
+            type: file
+            value: ''
+          type: form-data
+        desc: ''
+        headers: ''
+        method: post
+        params: ''
+        retry_config:
+          max_retries: 6
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: 上传JMX脚本
+        type: http-request
+        url: http://{{#1760409854786.ip#}}:3900/upload
+        variables: []
+      height: 141
+      id: '1760418968306'
+      position:
+        x: -3946.862152321756
+        y: 652.3731738602255
+      positionAbsolute:
+        x: -3946.862152321756
+        y: 652.3731738602255
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - file:
+            - '1760409854786'
+            - param_file
+            id: key-value-388
+            key: files
+            type: file
+            value: ''
+          - id: key-value-409
+            key: ''
+            type: text
+            value: ''
+          type: form-data
+        desc: ''
+        headers: ''
+        method: post
+        params: ''
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: 上传参数化文件
+        type: http-request
+        url: http://{{#1760409854786.ip#}}:3900/upload
+        variables: []
+      height: 141
+      id: '1760422465839'
+      position:
+        x: -836.4061536991283
+        y: 646.7161910806022
+      positionAbsolute:
+        x: -836.4061536991283
+        y: 646.7161910806022
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: not empty
+            id: ab817859-2f21-49c7-8cb6-0cf4e33b3f9c
+            value: ''
+            varType: array[file]
+            variable_selector:
+            - '1760409854786'
+            - param_file
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 条件分支
+        type: if-else
+      height: 124
+      id: '1760422564037'
+      position:
+        x: -1627.100230109585
+        y: 646.7161910806022
+      positionAbsolute:
+        x: -1627.100230109585
+        y: 646.7161910806022
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        break_conditions:
+        - comparison_operator: is
+          id: 44b72d66-f5b4-4e7e-8538-13805fe25759
+          value: '1'
+          varType: string
+          variable_selector:
+          - '1760422750826'
+          - is_best
+        desc: ''
+        error_handle_mode: terminated
+        height: 607
+        logical_operator: and
+        loop_count: 100
+        loop_variables:
+        - id: ab72cf62-e1a8-474b-80ac-08a4fdc611a5
+          label: is_best
+          value: '0'
+          value_type: constant
+          var_type: string
+        - id: 9cc9d259-584e-4ce5-8767-9c5114a67386
+          label: next_threads
+          value:
+          - '1760409854786'
+          - threads
+          value_type: variable
+          var_type: string
+        - id: 19031626-0e7c-4cc8-b092-43cd0a3149c4
+          label: history_data
+          value: '[]'
+          value_type: constant
+          var_type: array[string]
+        - id: 80ae8a7f-35ba-46df-a0e9-436f7bd69f98
+          label: best_tps
+          value: '0'
+          value_type: constant
+          var_type: string
+        - id: f549a69d-5c15-44d9-ad99-8a55e532ccce
+          label: best_rt
+          value: '0'
+          value_type: constant
+          var_type: string
+        - id: 6480b779-bdd2-47ee-94ee-6277aebb2383
+          label: best_threads
+          value: '0'
+          value_type: constant
+          var_type: string
+        - id: a8908902-afc0-4999-8f90-61b68358567e
+          label: num
+          value: '1'
+          value_type: constant
+          var_type: number
+        selected: false
+        start_node_id: 1760422750826start
+        title: 循环
+        type: loop
+        width: 4667
+      height: 607
+      id: '1760422750826'
+      position:
+        x: -4532.846971685074
+        y: 944.8461555478538
+      positionAbsolute:
+        x: -4532.846971685074
+        y: 944.8461555478538
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 4667
+      zIndex: 1
+    - data:
+        desc: ''
+        isInLoop: true
+        selected: false
+        title: ''
+        type: loop-start
+      draggable: false
+      height: 48
+      id: 1760422750826start
+      parentId: '1760422750826'
+      position:
+        x: 24
+        y: 68
+      positionAbsolute:
+        x: -4508.846971685074
+        y: 1012.8461555478538
+      selectable: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-loop-start
+      width: 44
+      zIndex: 1002
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1760422750826'
+        model:
+          completion_params: {}
+          mode: chat
+          name: doubao1.6seed
+          provider: langgenius/volcengine_maas/volcengine_maas
+        prompt_template:
+        - id: b065e7e9-8d67-41eb-a087-62f79c0ad174
+          role: system
+          text: '# 角色
+
+            你是一位Jmeter性能测试专家
+
+             
+
+            ## 目标
+
+            用户会提供多个不同并发下压测后jmeter的概要日志，请依据数据，分析是否达到性能拐点
+
+             
+
+            ## 技能
+
+            ### 技能1：熟悉jmeter概要日志结构和含义
+
+            如：
+
+            ```
+
+            2025-05-07 17:19:09,024 INFO o.a.j.r.Summariser: summary =  12498 in 00:01:00
+            =  208.0/s Avg: 47 Min: 43 Max: 198 Err: 0 (0.00%)
+
+            ```
+
+            以上代表tps为208，平均响应时间为47毫秒，错误率为0%
+
+             
+
+            ### 技能2：熟悉性能测试拐点分析。
+
+            1. 如果某一轮压测后的tps跟上一轮几乎没有增长，那么上一轮的tps就是拐点数据，就不需要继续压测了。
+
+             
+
+            ### 技能3：灵活调整压测策略
+
+            1. 如果没有达到性能拐点，请给出下一轮压测需要的并发线程数。
+
+            2. 每轮压测采用相对固定的梯度并发数。
+
+            3. 如果经过多轮压测，还没达到拐点，可以增加并发间隔，比如可以从每轮增加10并发，改为每轮增加20并发，避免因为并发梯度太小，造成压测轮数过多。
+
+             
+
+            ## 输出格式：json格式
+
+            ### 示例1：
+
+            {"next_threads": 50, "is_best": 0, "best_tps": 0, "best_rt": 0 "best_threads":
+            0}
+
+             
+
+            ### 示例2：
+
+            {"next_threads": 0, "is_best": 1, "best_tps": 268, "best_rt": 40, "best_threads":
+            30}
+
+             
+
+            ### 字段解释：
+
+            next_threads：下一轮并发数（如果已经到拐点时为0）
+
+            is_best：是否达到拐点（0代表否，1代表是）
+
+            best_tps：拐点tps（没到拐点时为0）
+
+            best_rt：拐点平均响应时间（没到拐点时为0）
+
+            best_threads：拐点线程数（没到拐点时为0）
+
+             
+
+            ## 限制
+
+            1. 必须输出指定的json格式
+
+            2. 直接输出json，不需要任何解释'
+        - id: 27136915-ed07-4aa4-84c3-27b73bb45e4b
+          role: user
+          text: 'jmeter压测历史数据
+
+            {{#1760422750826.history_data#}}'
+        selected: false
+        title: 判断是否拐点
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1760423322379'
+      parentId: '1760422750826'
+      position:
+        x: 2807.0572715801145
+        y: 235.39957502965262
+      positionAbsolute:
+        x: -1725.7897001049596
+        y: 1180.2457305775065
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - id: key-value-3596
+            key: ''
+            type: text
+            value: '{"threads":"{{#1760422750826.next_threads#}}","jmx":"{{#1760409854786.jmx.name#}}","mode":"{{#1760409854786.mode#}}","duration":"{{#1760409854786.during_time#}}"}'
+          type: json
+        desc: ''
+        headers: Content-type:application/json
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1760422750826'
+        method: post
+        params: ''
+        retry_config:
+          max_retries: 5
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: 执行脚本
+        type: http-request
+        url: http://{{#1760409854786.ip#}}:3900/execute_jmeter
+        variables: []
+      height: 141
+      id: '1760451454426'
+      parentId: '1760422750826'
+      position:
+        x: 123.22271246725359
+        y: 244.7201825917657
+      positionAbsolute:
+        x: -4409.6242592178205
+        y: 1189.5663381396193
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        desc: ''
+        isInIteration: false
+        isInLoop: true
+        items:
+        - input_type: variable
+          operation: append
+          value:
+          - '1760452434284'
+          - output
+          variable_selector:
+          - '1760422750826'
+          - history_data
+          write_mode: over-write
+        loop_id: '1760422750826'
+        selected: false
+        title: 变量赋值
+        type: assigner
+        version: '2'
+      height: 86
+      id: '1760452250922'
+      parentId: '1760422750826'
+      position:
+        x: 1919.90369855278
+        y: 267.1960541928713
+      positionAbsolute:
+        x: -2612.943273132294
+        y: 1212.042209740725
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        desc: ''
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1760422750826'
+        selected: false
+        template: "{\r\n    \"threads\":{{arg1}}\r\n    \"data\":{{arg2}}\r\n}"
+        title: 模板转换
+        type: template-transform
+        variables:
+        - value_selector:
+          - '1760422750826'
+          - next_threads
+          variable: arg1
+        - value_selector:
+          - '1760451454426'
+          - body
+          variable: arg2
+      height: 52
+      id: '1760452434284'
+      parentId: '1760422750826'
+      position:
+        x: 1496.3143359014684
+        y: 265.8695756817224
+      positionAbsolute:
+        x: -3036.5326357836057
+        y: 1210.7157312295762
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        desc: ''
+        isInIteration: false
+        isInLoop: true
+        items:
+        - input_type: variable
+          operation: over-write
+          value:
+          - '1760453972705'
+          - next_threads
+          variable_selector:
+          - '1760422750826'
+          - next_threads
+          write_mode: over-write
+        - input_type: variable
+          operation: over-write
+          value:
+          - '1760453972705'
+          - is_best
+          variable_selector:
+          - '1760422750826'
+          - is_best
+          write_mode: over-write
+        - input_type: variable
+          operation: over-write
+          value:
+          - '1760453972705'
+          - best_tps
+          variable_selector:
+          - '1760422750826'
+          - best_tps
+          write_mode: over-write
+        - input_type: variable
+          operation: over-write
+          value:
+          - '1760453972705'
+          - best_rt
+          variable_selector:
+          - '1760422750826'
+          - best_rt
+          write_mode: over-write
+        - input_type: variable
+          operation: over-write
+          value:
+          - '1760453972705'
+          - best_threads
+          variable_selector:
+          - '1760422750826'
+          - best_threads
+          write_mode: over-write
+        - input_type: constant
+          operation: +=
+          value: 1
+          variable_selector:
+          - '1760422750826'
+          - num
+          write_mode: over-write
+        loop_id: '1760422750826'
+        selected: false
+        title: 变量赋值 2
+        type: assigner
+        version: '2'
+      height: 226
+      id: '1760453837068'
+      parentId: '1760422750826'
+      position:
+        x: 4409
+        y: 231.89265068587065
+      positionAbsolute:
+        x: -123.8469716850741
+        y: 1176.7388062337245
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        desc: ''
+        instruction: ''
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1760422750826'
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: Doubao-1.5-pro-32k
+          provider: langgenius/volcengine_maas/volcengine_maas
+        parameters:
+        - description: 下一轮压测并线程数
+          name: next_threads
+          required: false
+          type: string
+        - description: 是否达到拐点
+          name: is_best
+          required: false
+          type: string
+        - description: 最佳tps
+          name: best_tps
+          required: false
+          type: string
+        - description: 最佳响应时间
+          name: best_rt
+          required: false
+          type: string
+        - description: 最佳线程数
+          name: best_threads
+          required: false
+          type: string
+        query:
+        - '1760423322379'
+        - text
+        reasoning_mode: prompt
+        selected: false
+        title: 参数提取器
+        type: parameter-extractor
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1760453972705'
+      parentId: '1760422750826'
+      position:
+        x: 3903.639926745793
+        y: 234.24206507127042
+      positionAbsolute:
+        x: -629.2070449392809
+        y: 1179.088220619124
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - id: key-value-324
+            key: ''
+            type: text
+            value: '{"jmx":"{{#1760409854786.jmx.name#}}","threads":"{{#1760422750826.best_threads#}}"}'
+          type: json
+        desc: ''
+        headers: Content-Type:application/json
+        method: POST
+        params: ''
+        retry_config:
+          max_retries: 7
+          retry_enabled: true
+          retry_interval: 1766
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: 生成测试报告
+        type: http-request
+        url: http://{{#1760409854786.ip#}}:3900/generate_report
+        variables: []
+      height: 141
+      id: '1760505607256'
+      position:
+        x: 871.2769897902406
+        y: 890.3188556743751
+      positionAbsolute:
+        x: 871.2769897902406
+        y: 890.3188556743751
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        answer: '{{#1760418968306.body#}}
+
+
+
+          -------------------------------------------
+
+          '
+        desc: ''
+        selected: false
+        title: 性能测试脚本上传结果
+        type: answer
+        variables: []
+      height: 119
+      id: '1760511026083'
+      position:
+        x: -2471.406584424711
+        y: 646.7161910806022
+      positionAbsolute:
+        x: -2471.406584424711
+        y: 646.7161910806022
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        answer: '{{#1760423322379.text#}}
+
+
+
+          -------------------------------------------
+
+          '
+        desc: ''
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1760422750826'
+        selected: false
+        title: 判断是否是性能拐点
+        type: answer
+        variables: []
+      height: 119
+      id: '1760511078673'
+      parentId: '1760422750826'
+      position:
+        x: 3306.695646234529
+        y: 228.37192719474024
+      positionAbsolute:
+        x: -1226.1513254505453
+        y: 1173.218082742594
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        answer: 'history_data的数据是:{{#1760422750826.history_data#}}
+
+
+
+          -------------------------------------------
+
+
+          '
+        desc: ''
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1760422750826'
+        selected: false
+        title: 查看历史数据节点
+        type: answer
+        variables: []
+      height: 135
+      id: '1760536320713'
+      parentId: '1760422750826'
+      position:
+        x: 2339.5012963596455
+        y: 253.18796512108975
+      positionAbsolute:
+        x: -2193.3456753254286
+        y: 1198.0341206689436
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        answer: '开始第{{#1760422750826.num#}}轮压测,等待Jmeter数据
+
+
+
+          {{#1760451454426.body#}}
+
+
+          -------------------------------------------'
+        desc: ''
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1760422750826'
+        selected: false
+        title: 执行节点回复
+        type: answer
+        variables: []
+      height: 154
+      id: '1761543029721'
+      parentId: '1760422750826'
+      position:
+        x: 1137.8003675653222
+        y: 95.77083051850923
+      positionAbsolute:
+        x: -3395.046604119752
+        y: 1040.616986066363
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: doubao-1.5-pro-32k
+          provider: langgenius/volcengine_maas/volcengine_maas
+        parameters:
+        - description: 把最终的性能测试报告提取出来
+          name: report_url
+          required: false
+          type: string
+        query:
+        - '1760505607256'
+        - body
+        reasoning_mode: prompt
+        selected: false
+        title: 参数提取器 2
+        type: parameter-extractor
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1761628358063'
+      position:
+        x: 2384.2700266165666
+        y: 762.9123136285275
+      positionAbsolute:
+        x: 2384.2700266165666
+        y: 762.9123136285275
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        answer: '压测结束，等待生成测试报告
+
+
+
+          -------------------------------------------'
+        desc: ''
+        selected: false
+        title: 直接回复 6
+        type: answer
+        variables: []
+      height: 116
+      id: '1761629166816'
+      position:
+        x: 405.51748958279893
+        y: 1503.251914424235
+      positionAbsolute:
+        x: 405.51748958279893
+        y: 1503.251914424235
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        answer: '生成测试报告返回的内容是:
+
+
+
+          {{#1760505607256.body#}}
+
+
+          -------------------------------------------
+
+
+          '
+        desc: ''
+        selected: false
+        title: 生成测试报告的返回body
+        type: answer
+        variables: []
+      height: 135
+      id: '1761646882329'
+      position:
+        x: 2084.270026616567
+        y: 1146.6550827167368
+      positionAbsolute:
+        x: 2084.270026616567
+        y: 1146.6550827167368
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        answer: '参数提取后的url为:
+
+
+          {{#1761628358063.report_url#}}
+
+
+
+          -------------------------------------------
+
+
+
+          '
+        desc: ''
+        selected: false
+        title: 参数提取后的url
+        type: answer
+        variables: []
+      height: 135
+      id: '1761646958020'
+      position:
+        x: 2805.2923389823472
+        y: 929.7817645522407
+      positionAbsolute:
+        x: 2805.2923389823472
+        y: 929.7817645522407
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "import json\ndef main(arg1: str) -> dict:\n    data = json.loads(arg1)\n\
+          \    return {\"result\":json.dumps(data,ensure_ascii=False),}\n    \n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: Unicode转码函数
+        type: code
+        variables:
+        - value_selector:
+          - '1760418968306'
+          - body
+          variable: arg1
+      height: 52
+      id: '1761704390283'
+      position:
+        x: -3388.470645408941
+        y: 659.177123666754
+      positionAbsolute:
+        x: -3388.470645408941
+        y: 659.177123666754
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        answer: '{{#1761704390283.result#}}
+
+
+          -------------------------------------------
+
+          '
+        desc: ''
+        selected: false
+        title: 解码Unicode
+        type: answer
+        variables: []
+      height: 119
+      id: '1761704576343'
+      position:
+        x: -2907.485580555282
+        y: 646.7161910806022
+      positionAbsolute:
+        x: -2907.485580555282
+        y: 646.7161910806022
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "\ndef main(arg1: str) -> dict:\n    data = json.loads(arg1)\n    return\
+          \ {\n        \"result\": json.dumps(data,ensure_ascii=False),\n    }\n"
+        code_language: python3
+        desc: ''
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1760422750826'
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: 执行脚本响应体Unicode解码
+        type: code
+        variables:
+        - value_selector:
+          - '1760451454426'
+          - body
+          variable: arg1
+      height: 52
+      id: '1761706424582'
+      parentId: '1760422750826'
+      position:
+        x: 454.7921799256742
+        y: 135.23373939637463
+      positionAbsolute:
+        x: -4078.0547917594
+        y: 1080.0798949442283
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        answer: '{{#1761706424582.result#}}
+
+
+          -------------------------------------------
+
+
+          '
+        desc: ''
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1760422750826'
+        selected: false
+        title: 执行脚本接口body的Unicode解码
+        type: answer
+        variables: []
+      height: 119
+      id: '1761706521320'
+      parentId: '1760422750826'
+      position:
+        x: 799.6982486487623
+        y: 257.70483591388825
+      positionAbsolute:
+        x: -3733.148723036312
+        y: 1202.550991461742
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        code: "\ndef main(arg1: str) -> dict:\n    data = json.loads(arg1)\n    return\
+          \ {\n        \"result\": json.dumps(data,ensure_ascii=False),\n    }\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: 生成测试报告接口Unicode解码
+        type: code
+        variables:
+        - value_selector:
+          - '1760505607256'
+          - body
+          variable: arg1
+      height: 52
+      id: '1761706638033'
+      position:
+        x: 1274.708372575488
+        y: 1444.1771248171976
+      positionAbsolute:
+        x: 1274.708372575488
+        y: 1444.1771248171976
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        answer: '{{#1761706638033.result#}}
+
+
+
+          -------------------------------------------
+
+
+          '
+        desc: ''
+        selected: false
+        title: 生成测试报告接口返回数据解码
+        type: answer
+        variables: []
+      height: 119
+      id: '1761706646438'
+      position:
+        x: 1649.551820447302
+        y: 1146.6550827167368
+      positionAbsolute:
+        x: 1649.551820447302
+        y: 1146.6550827167368
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - id: key-value-63
+            key: ''
+            type: text
+            value: '{"webhook_url":"https://open.feishu.cn/open-apis/bot/v2/hook/ea943dd4-8086-4e1e-b28b-93a526f2634e","report_dir_name":"{{#1761628358063.report_url#}}"}'
+          type: raw-text
+        desc: ''
+        headers: Content-Type:application/json
+        method: post
+        params: ''
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: 飞书发送性能测试报告
+        type: http-request
+        url: http://{{#1760409854786.ip#}}:3900/send_to_feishu
+        variables: []
+      height: 141
+      id: '1761788862013'
+      position:
+        x: 3424.9826084793212
+        y: 988.8571933537796
+      positionAbsolute:
+        x: 3424.9826084793212
+        y: 988.8571933537796
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        answer: '飞书测试报告发送完成，响应状态码：{{#1761788862013.status_code#}}
+
+
+
+          -------------------------------------------'
+        desc: ''
+        selected: false
+        title: 发送飞书测试报告
+        type: answer
+        variables: []
+      height: 151
+      id: '1761789013367'
+      position:
+        x: 3961.038481823903
+        y: 1023.6762718823345
+      positionAbsolute:
+        x: 3961.038481823903
+        y: 1023.6762718823345
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    viewport:
+      x: 2306.871691988574
+      y: -45.373101430097876
+      zoom: 0.46293736055131995
