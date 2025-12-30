@@ -294,7 +294,9 @@ def send_to_feishu():
         webhook_url = data.get('webhook_url')  # 飞书机器人的Webhook地址
         report_dir_name = data.get('report_dir_name')  # 报告目录名
         test_summary = data.get('test_summary', '')  # 测试摘要信息（可选）
-        duration = data.get('duration', '')  # 压测时长（可选）
+        duration = data.get('duration')  # 压测时长
+        report_name = data.get('report_name')  # 报告名称
+        print(f"send_to_feishu: {webhook_url}, {report_dir_name}, {test_summary}, {duration}, {report_name}")
 
         # 参数校验
         if not all([webhook_url, report_dir_name]):
@@ -508,7 +510,7 @@ def send_to_feishu():
             "content": {
                 "post": {
                     "zh_cn": {
-                        "title": "性能测试报告",
+                        "title": f"{report_name}性能测试报告",
                         "content": [
                             [
                                 {
