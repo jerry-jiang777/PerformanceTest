@@ -4,6 +4,7 @@ import subprocess
 import requests
 import json
 from werkzeug.utils import secure_filename
+from log_utils import log_api_call  # 导入日志装饰器
 
 app = Flask(__name__)
 
@@ -16,6 +17,7 @@ app.config['SERVER_URL'] = 'http://localhost:3900'  # 服务器URL，用于生�
 
 
 @app.route('/upload', methods=['POST'])
+@log_api_call()  # 添加日志装饰器
 def upload_files():
     try:
         # 检查是否有文件在请求中
@@ -51,6 +53,7 @@ def upload_files():
 
 
 @app.route('/execute_jmeter', methods=['POST'])
+@log_api_call()  # 添加日志装饰器
 def execute_jmeter():
     try:
         # 获取请求参数
@@ -158,6 +161,7 @@ def execute_jmeter():
 
 
 @app.route('/generate_report', methods=['POST'])
+@log_api_call()  # 添加日志装饰器
 def generate_report():
     try:
         # 获取请求参数
@@ -233,6 +237,7 @@ def generate_report():
 
 # 用于访问报告的路由
 @app.route('/<report_dir_name>')
+@log_api_call()  # 添加日志装饰器
 def serve_report(report_dir_name):
     try:
         # 确保报告目录名称安全
@@ -267,6 +272,7 @@ def serve_report(report_dir_name):
 
 # 用于加载报告中静态资源的路由
 @app.route('/<report_dir_name>/<path:filename>')
+@log_api_call()  # 添加日志装饰器
 def serve_report_assets(report_dir_name, filename):
     try:
         # 确保报告目录名称安全
@@ -287,6 +293,7 @@ def serve_report_assets(report_dir_name, filename):
 
 # 发送报告链接和性能指标到飞书机器人的接口
 @app.route('/send_to_feishu', methods=['POST'])
+@log_api_call()  # 添加日志装饰器
 def send_to_feishu():
     try:
         # 获取请求参数
