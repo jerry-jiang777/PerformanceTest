@@ -1,10 +1,17 @@
-from flask import Flask, request, jsonify, send_from_directory, make_response
+import sys
 import os
+# 将项目根目录添加到Python路径
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, project_root)
+
+
+from flask import Flask, request, jsonify, send_from_directory, make_response
+import time
 import subprocess
 import requests
 import json
 from werkzeug.utils import secure_filename
-from log_utils import log_api_call  # 导入日志装饰器
+from log_utils.log_utils import log_api_call  # 导入日志装饰器
 
 app = Flask(__name__)
 
@@ -295,6 +302,8 @@ def serve_report_assets(report_dir_name, filename):
 @app.route('/send_to_feishu', methods=['POST'])
 @log_api_call()  # 添加日志装饰器
 def send_to_feishu():
+    # 添加等待时间，确保参数准备就绪以免出发重试机制（避免飞书重复收到相同的消息）
+    time.sleep(5)
     try:
         # 获取请求参数
         data = request.get_json()
