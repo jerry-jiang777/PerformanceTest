@@ -303,7 +303,7 @@ def serve_report_assets(report_dir_name, filename):
 @log_api_call()  # 添加日志装饰器
 def send_to_feishu():
     # 添加等待时间，确保参数准备就绪以免出发重试机制（避免飞书重复收到相同的消息）
-    time.sleep(5)
+    time.sleep(15)
     try:
         # 获取请求参数
         data = request.get_json()
